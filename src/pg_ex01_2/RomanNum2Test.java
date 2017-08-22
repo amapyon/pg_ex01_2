@@ -7,29 +7,15 @@ import org.junit.Test;
 public class RomanNum2Test {
 
 	@Test
-	public void convertNumTest() {
-		//12がただしく"XII"に変換される
-		RomanNum2 romannum2 = new RomanNum2() ;
-		String testoutput = romannum2.convertNum(12);
-		assertEquals("XII",testoutput);
+	public void createRomNumErrorTest() {
+		assertEquals("変換できません",RomanNum2.createRomNum(0));
+		assertEquals("変換できません",RomanNum2.createRomNum(-1));
+		assertEquals("変換できません",RomanNum2.createRomNum(21));
 	}
 
 	@Test
-	public void checkNumTest(){
-		RomanNum2 romannum2 = new RomanNum2();
-		//10を入力したら、Trueが返る
-		assertTrue(romannum2.checkNum(10));
-		//21を入力したら、Falseが返る
-		assertFalse(romannum2.checkNum(21));
-		//-1を入力したら、Falseが返る
-		assertFalse(romannum2.checkNum(-1));
+	public void createRomNumTest(){
+		assertEquals("III",RomanNum2.createRomNum(3));
+		assertEquals("XIII",RomanNum2.createRomNum(13));
 	}
-
-	@Test
-	public void createRomNum(){
-		RomanNum2 romannum2 = new RomanNum2();
-		//-1を入力したら、エラーメッセージが表示される
-		assertEquals("変換できません",romannum2.createRomNum(-1));
-	}
-
 }
