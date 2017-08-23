@@ -7,8 +7,7 @@ public class RomanNum2 {
 
 	//引数として受け取った数値をローマ数字に変換して返すクラス
 	public static String createRomNum (int recnum){
-		String roman_num = new String() ;
-		roman_num = logic(recnum);
+		String roman_num = logic(recnum);
 		return roman_num ;
 	}
 
