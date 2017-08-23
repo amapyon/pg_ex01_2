@@ -18,14 +18,12 @@ public class RomanNum2 {
 		int rem = num%10;
 
 		String roman_nums[][] = {{"","X","XX"},{"","I","II","III","IV","V","VI","VII","VIII","IX"}};
-		String answer;
 
-		if (num >=1 && num <= 20){
-			answer = roman_nums[0][quot] + roman_nums[1][rem];
-		}else{
-			answer = err_mes;
+
+		if (num < 1 && 20 < num){
+			return err_mes;
 		}
-		return answer;
+		return roman_nums[0][quot] + roman_nums[1][rem];
 	}
 }
 
