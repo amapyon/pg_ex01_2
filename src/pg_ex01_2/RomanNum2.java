@@ -7,22 +7,21 @@ public class RomanNum2 {
 
 	//引数として受け取った数値をローマ数字に変換して返すクラス
 	public static String createRomNum (int recnum){
-		String roman_num = logic(recnum);
-		return roman_num ;
+		return logic(recnum);
 	}
 
 	//createRomNumクラスのロジック部分
 	public static String logic(int num){
 		//受け取った値をローマ数字に変換し、出力する
-		int quot = num/10;
-		int rem = num%10;
-
-		String roman_nums[][] = {{"","X","XX"},{"","I","II","III","IV","V","VI","VII","VIII","IX"}};
-
-
-		if (num < 1 && 20 < num){
+		if (num < 1 || 20 < num){
 			return err_mes;
 		}
+
+		int quot = num / 10;
+		int rem = num % 10;
+
+		String[][] roman_nums = {{"","X","XX"},{"","I","II","III","IV","V","VI","VII","VIII","IX"}};
+
 		return roman_nums[0][quot] + roman_nums[1][rem];
 	}
 }
